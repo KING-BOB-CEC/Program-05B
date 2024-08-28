@@ -12,7 +12,10 @@ int main()
     cout << "Hello! Guess a number between 1 and 100.\n";
     cin >> playerGuess;
     cout << "You guessed " << playerGuess << ".\n";
-    if (playerGuess < myNumber)
+    
+    while (!gameOver)
+    {
+ if (playerGuess < myNumber)
     {
         cout << "Your guess was too low.\n";
     }
@@ -25,10 +28,9 @@ int main()
         cout << "Wow, you were right!\n";
         gameOver = 1;
     }
-    if (!gameOver)
-    {
         cout << "guess again!\n";
         cin>> playerGuess;
+        guessCount++
     }
     cout << "My number was " << myNumber <<".\n";
     cout << "It took you " <<guessCount << " guesses.\n";
